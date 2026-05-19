@@ -1,0 +1,72 @@
+<%- include("partials/header") %>
+
+<div class="edit-container">
+
+    <div class="edit-card">
+
+        <h1 class="edit-heading">
+            Edit Student
+        </h1>
+
+        <form action="/students/update/<%= student.id %>" method="POST">
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    value="<%= student.name %>"
+                >
+
+            </div>
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Course
+                </label>
+
+                <input
+                    type="text"
+                    name="course"
+                    class="form-control"
+                    value="<%= student.course %>"
+                >
+
+            </div>
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Marks
+                </label>
+
+                <input
+                    type="number"
+                    name="marks"
+                    class="form-control"
+                    value="<%= student.marks %>"
+                >
+
+            </div>
+
+            <div class="text-center">
+
+                <button class="update-btn">
+                    Update Student
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>

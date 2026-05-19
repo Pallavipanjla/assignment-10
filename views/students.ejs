@@ -1,0 +1,81 @@
+<%- include("partials/header") %>
+
+<div class="main-container">
+
+    <div class="student-card">
+
+        <h1 class="student-heading">
+            Student Management System
+        </h1>
+
+        <div class="table-responsive">
+
+            <table class="table custom-table align-middle text-center">
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>COURSE</th>
+                        <th>MARKS</th>
+                        <th>ACTIONS</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <% students.forEach(student => { %>
+
+                        <tr>
+
+                            <td>
+                                <%= student.id %>
+                            </td>
+
+                            <td>
+                                <%= student.name %>
+                            </td>
+
+                            <td>
+                                <%= student.course %>
+                            </td>
+
+                            <td>
+                                <%= student.marks %>
+                            </td>
+
+                            <td>
+
+                                <a
+                                    href="/students/edit/<%= student.id %>"
+                                    class="btn btn-edit"
+                                >
+                                    Edit
+                                </a>
+
+                                <a
+                                    href="/students/delete/<%= student.id %>"
+                                    class="btn btn-delete"
+                                >
+                                    Delete
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    <% }) %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>
